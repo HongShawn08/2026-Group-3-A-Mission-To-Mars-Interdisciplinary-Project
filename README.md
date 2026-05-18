@@ -55,18 +55,18 @@ python algae_simulation.py
 ```
 
 ### Project Structure
-├── algae_simulation.py       # Main simulation code
-├── data_generation.py        # Synthetic dataset creation
-├── analysis.py               # Data processing and statistical analysis
-├── visualizations.py         # Chart generation scripts
-├── datasets/                 # Generated CSV files
-│   └── algae_growth_data.csv
-├── charts/                   # Output visualizations
-│   ├── growth_over_time.png
-│   └── enzyme_comparison.png
-├── prompts/                  # AI/LLM prompts used for model development
-│   └── dataset_generation_log.md
-└── README.md
+- `algae_simulation.py` - Main simulation code
+- `data_generation.py` - Synthetic dataset creation
+- `analysis.py` - Data processing and statistical analysis
+- `visualizations.py` - Chart generation scripts
+- `datasets/` - Generated CSV files
+  - `algae_growth_data.csv`
+- `charts/` - Output visualizations
+  - `growth_over_time.png`
+  - `enzyme_comparison.png`
+- `prompts/` - AI/LLM prompts used for model development
+  - `dataset_generation_log.md`
+- `README.md`
 
 ### Dataset Variables
 - **Soil Composition:** Simulated Martian regolith mixes (iron-rich, sulfate-based, etc.)
