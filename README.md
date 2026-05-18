@@ -7,9 +7,9 @@ This repository contains Group 3's computer science component for the 11th grade
 **Research Question:** How do different environmental factors (soil composition, enzyme types, temperature, light exposure) affect algae growth rates and oxygen output on Mars?
 
 ### Team Members
-- **Shawn** - Lead Developer & Data Analysis
-- [Team Member 2] - [Role]
-- [Team Member 3] - [Role]
+- **Shawn** - Co-Developer & Data Analyst
+- **Derrick Kwan** - Co-Developer & Data Analyst
+- **John Louie Maniego** - Co-Developer & Data Analyst
 
 *Additional contributors from Biotech and Engineering pathways TBD*
 
