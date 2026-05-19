@@ -297,8 +297,8 @@ class AlgaeSimulationGUI:
                           enzyme_factor * 
                           time_factor)
             
-            # Add noise
-            growth_rate *= random.uniform(0.92, 1.08)
+            # Add small noise (±3% for realistic variation)
+            growth_rate *= random.uniform(0.97, 1.03)
             growth_rate = max(0.5, growth_rate)
             
             # Calculate oxygen output
@@ -330,12 +330,22 @@ class AlgaeSimulationGUI:
         growth_rates = [r['growth_rate'] for r in self.simulation_data]
         oxygen_outputs = [r['oxygen_output'] for r in self.simulation_data]
         
-        # Chart 1: Growth Rate Timeline
-        self.ax1.plot(days, growth_rates, linewidth=2, color='#2E7D32', 
-                     alpha=0.7, label='Daily Growth Rate')
+         # Chart 1: Growth Rate Timeline
         
-        # Calculate moving average
-        window = min(10, len(growth_rates) // 5)
+        # Smooth the daily data slightly for better visualization
+        smoothed_growth = []
+        smooth_window = 3  # 3-day rolling average for the main line
+        for i in range(len(growth_rates)):
+            if i < smooth_window:
+                smoothed_growth.append(sum(growth_rates[:i+1]) / (i+1))
+            else:
+                smoothed_growth.append(sum(growth_rates[i-smooth_window+1:i+1]) / smooth_window)
+        
+        self.ax1.plot(days, smoothed_growth, linewidth=2.5, color='#2E7D32', 
+                     alpha=0.8, label='Daily Growth Rate (3-day smooth)')
+        
+        # Calculate longer-term trend line
+        window = min(15, len(growth_rates) // 3)  # Longer window for trend
         if window > 1:
             moving_avg = []
             for i in range(len(growth_rates)):
@@ -344,8 +354,8 @@ class AlgaeSimulationGUI:
                 else:
                     moving_avg.append(sum(growth_rates[i-window:i]) / window)
             
-            self.ax1.plot(days, moving_avg, linewidth=3, color='darkblue', 
-                         alpha=0.6, linestyle='--', label=f'{window}-Day Moving Average')
+            self.ax1.plot(days, moving_avg, linewidth=2.5, color='#1565C0', 
+                         alpha=0.7, linestyle='--', label=f'{window}-Day Trend Line')
         
         self.ax1.set_xlabel('Day', fontsize=10, fontweight='bold')
         self.ax1.set_ylabel('Growth Rate (g/day)', fontsize=10, fontweight='bold')
@@ -354,10 +364,10 @@ class AlgaeSimulationGUI:
         self.ax1.grid(True, alpha=0.3, linestyle='--')
         self.ax1.legend(loc='best')
         
-        # Annotate peak
-        max_growth = max(growth_rates)
-        max_day = days[growth_rates.index(max_growth)]
-        self.ax1.annotate(f'Peak: {max_growth:.2f} g/day', 
+        # Annotate peak (using smoothed data)
+        max_growth = max(smoothed_growth)
+        max_day = days[smoothed_growth.index(max_growth)]
+        self.ax1.annotate(f'Peak: {max_growth:.2f} g/day',
                          xy=(max_day, max_growth), 
                          xytext=(max_day + len(days)*0.1, max_growth + 0.5),
                          arrowprops=dict(arrowstyle='->', color='red', lw=1.5),
