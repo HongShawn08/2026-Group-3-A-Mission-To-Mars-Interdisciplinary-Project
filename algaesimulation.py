@@ -40,9 +40,9 @@ class AlgaeSimulation:
         
         # Enzyme Type
         tk.Label(input_frame, text="Enzyme Type:").grid(row=1, column=0, sticky="w", pady=5)
-        self.enzyme_var = tk.StringVar(value="Enzyme A")
+        self.enzyme_var = tk.StringVar(value="Chromate Reductase")
         enzyme_dropdown = ttk.Combobox(input_frame, textvariable=self.enzyme_var,
-                                      values=["Enzyme A", "Enzyme B", "Enzyme C"],
+                          values=["Chromate Reductase", "Class II Chromate Reductase", "Urease"],
                                       state="readonly", width=20)
         enzyme_dropdown.grid(row=1, column=1, pady=5)
         
@@ -189,7 +189,7 @@ class AlgaeSimulation:
         self.results_text.delete(1.0, tk.END)
         self.simulation_data = []
         self.soil_var.set("Iron-rich")
-        self.enzyme_var.set("Enzyme A")
+        self.enzyme_var.set("Chromate Reductase")
         self.temp_var.set(20)
         self.co2_var.set(0.05)
         self.light_var.set(9)

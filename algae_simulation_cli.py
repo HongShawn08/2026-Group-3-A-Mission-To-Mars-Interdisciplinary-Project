@@ -28,10 +28,9 @@ class AlgaeSimulationCLI:
         
         # Enzyme coefficients
         enzyme_coefficients = {
-            "Control (None)": 1.0,
-            "Enzyme A": 1.15,
-            "Enzyme B": 1.30,
-            "Enzyme C": 1.50
+            "Chromate Reductase": 1.50,
+            "Class II Chromate Reductase": 1.30,
+            "Urease": 0.85
         }
         
         soil_factor = soil_coefficients[soil_type]
@@ -88,7 +87,7 @@ class AlgaeSimulationCLI:
         
         return data
     
-    def run_simulation(self, soil_type="Iron-rich", enzyme_type="Enzyme A", 
+    def run_simulation(self, soil_type="Iron-rich", enzyme_type="Chromate Reductase", 
                       num_days=30, temp_min=18, temp_max=24, 
                       light_min=7, light_max=11, co2_min=0.04, co2_max=0.07):
         """Run simulation and display results"""
@@ -193,13 +192,13 @@ def main():
     
     simulator = AlgaeSimulationCLI()
     
-    # Simulation 1: Baseline (Iron-rich soil, Enzyme A, standard conditions)
+    # Simulation 1: Top enzyme (Iron-rich soil, Chromate Reductase, standard conditions)
     print("\n" + "#"*80)
-    print("# SIMULATION 1: BASELINE CONDITIONS")
+    print("# SIMULATION 1: CHROMATE REDUCTASE")
     print("#"*80)
     simulator.run_simulation(
         soil_type="Iron-rich",
-        enzyme_type="Enzyme A",
+        enzyme_type="Chromate Reductase",
         num_days=30,
         temp_min=18,
         temp_max=24,
@@ -209,13 +208,13 @@ def main():
         co2_max=0.07
     )
     
-    # Simulation 2: Enhanced enzyme (Iron-rich soil, Enzyme C, standard conditions)
+    # Simulation 2: Middle enzyme (Iron-rich soil, Class II Chromate Reductase, standard conditions)
     print("\n" + "#"*80)
-    print("# SIMULATION 2: ENHANCED ENZYME (Enzyme C)")
+    print("# SIMULATION 2: CLASS II CHROMATE REDUCTASE")
     print("#"*80)
     simulator.run_simulation(
         soil_type="Iron-rich",
-        enzyme_type="Enzyme C",
+        enzyme_type="Class II Chromate Reductase",
         num_days=30,
         temp_min=18,
         temp_max=24,
@@ -225,13 +224,29 @@ def main():
         co2_max=0.07
     )
     
-    # Simulation 3: Optimal conditions (Iron-rich soil, Enzyme C, optimal environment)
+    # Simulation 3: Victim enzyme (Iron-rich soil, Urease, standard conditions)
     print("\n" + "#"*80)
-    print("# SIMULATION 3: OPTIMAL CONDITIONS")
+    print("# SIMULATION 3: UREASE")
     print("#"*80)
     simulator.run_simulation(
         soil_type="Iron-rich",
-        enzyme_type="Enzyme C",
+        enzyme_type="Urease",
+        num_days=30,
+        temp_min=18,
+        temp_max=24,
+        light_min=7,
+        light_max=11,
+        co2_min=0.04,
+        co2_max=0.07
+    )
+    
+    # Simulation 4: Optimal conditions (Iron-rich soil, Chromate Reductase, optimal environment)
+    print("\n" + "#"*80)
+    print("# SIMULATION 4: OPTIMAL CONDITIONS")
+    print("#"*80)
+    simulator.run_simulation(
+        soil_type="Iron-rich",
+        enzyme_type="Chromate Reductase",
         num_days=30,
         temp_min=20,
         temp_max=22,
@@ -240,14 +255,14 @@ def main():
         co2_min=0.05,
         co2_max=0.07
     )
-    
-    # Simulation 4: Challenging conditions (Clay-based soil, Control, suboptimal environment)
+
+    # Simulation 5: Challenging conditions (Clay-based soil, Control, suboptimal environment)
     print("\n" + "#"*80)
-    print("# SIMULATION 4: CHALLENGING CONDITIONS")
+    print("# SIMULATION 5: CHALLENGING CONDITIONS")
     print("#"*80)
     simulator.run_simulation(
         soil_type="Clay-based",
-        enzyme_type="Control (None)",
+        enzyme_type="Urease",
         num_days=30,
         temp_min=15,
         temp_max=20,

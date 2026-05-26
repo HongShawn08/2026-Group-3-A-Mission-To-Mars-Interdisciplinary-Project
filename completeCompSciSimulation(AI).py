@@ -55,9 +55,9 @@ class AlgaeSimulationGUI:
         # Enzyme Type
         tk.Label(control_frame, text="Enzyme Type:", font=("Arial", 10)).grid(
             row=row, column=0, sticky="w", pady=8)
-        self.enzyme_var = tk.StringVar(value="Control (None)")
+        self.enzyme_var = tk.StringVar(value="Chromate Reductase")
         enzyme_dropdown = ttk.Combobox(control_frame, textvariable=self.enzyme_var,
-                                      values=["Control (None)", "Enzyme A", "Enzyme B", "Enzyme C"],
+                          values=["Chromate Reductase", "Class II Chromate Reductase", "Urease"],
                                       state="readonly", width=18)
         enzyme_dropdown.grid(row=row, column=1, columnspan=2, pady=8)
         row += 1
@@ -255,10 +255,9 @@ class AlgaeSimulationGUI:
         
         # Enzyme coefficients
         enzyme_coefficients = {
-            "Control (None)": 1.0,
-            "Enzyme A": 1.15,
-            "Enzyme B": 1.30,
-            "Enzyme C": 1.50
+            "Chromate Reductase": 1.50,
+            "Class II Chromate Reductase": 1.30,
+            "Urease": 0.85
         }
         
         soil_factor = soil_coefficients[soil_type]

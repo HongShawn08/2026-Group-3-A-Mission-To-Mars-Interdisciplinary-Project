@@ -51,7 +51,7 @@ content = content.replace(old_js, new_js)
 # Update the reset function
 old_reset = '''        function resetForm() {
             document.getElementById('soil').value = 'Sulfate-based';
-            document.getElementById('enzyme').value = 'Enzyme B';
+            document.getElementById('enzyme').value = 'Chromate Reductase';
             document.getElementById('days').value = 30;
             document.getElementById('tempMin').value = 18;
             document.getElementById('tempMax').value = 24;
@@ -66,7 +66,7 @@ old_reset = '''        function resetForm() {
 
 new_reset = '''        function resetForm() {
             document.getElementById('soil').value = 'Sulfate-based';
-            document.getElementById('enzyme').value = 'Enzyme B';
+            document.getElementById('enzyme').value = 'Chromate Reductase';
             document.getElementById('days').value = 30;
             document.getElementById('tempMin').value = 18;
             document.getElementById('tempMax').value = 24;

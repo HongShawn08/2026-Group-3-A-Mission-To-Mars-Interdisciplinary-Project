@@ -310,10 +310,9 @@ HTML_TEMPLATE = '''
                 <div class="control-group">
                     <label for="enzyme">Enzyme Type:</label>
                     <select id="enzyme">
-                        <option value="Control (None)">Control (None) (1.0x)</option>
-                        <option value="Enzyme A">Enzyme A (1.15x)</option>
-                        <option value="Enzyme B" selected>Enzyme B (1.30x)</option>
-                        <option value="Enzyme C">Enzyme C (1.50x)</option>
+                        <option value="Chromate Reductase" selected>Chromate Reductase (1.50x)</option>
+                        <option value="Class II Chromate Reductase">Class II Chromate Reductase (1.30x)</option>
+                        <option value="Urease">Urease (0.85x)</option>
                     </select>
                 </div>
                 
@@ -427,7 +426,7 @@ HTML_TEMPLATE = '''
         
         function resetForm() {
             document.getElementById('soil').value = 'Sulfate-based';
-            document.getElementById('enzyme').value = 'Enzyme B';
+            document.getElementById('enzyme').value = 'Chromate Reductase';
             document.getElementById('days').value = 30;
             document.getElementById('tempMin').value = 18;
             document.getElementById('tempMax').value = 24;
@@ -634,10 +633,9 @@ def generate_algae_data(num_days, soil_type, enzyme_type, temp_min, temp_max,
     }
     
     enzyme_coefficients = {
-        "Control (None)": 1.0,
-        "Enzyme A": 1.15,
-        "Enzyme B": 1.30,
-        "Enzyme C": 1.50
+        "Chromate Reductase": 1.50,
+        "Class II Chromate Reductase": 1.30,
+        "Urease": 0.85
     }
     
     soil_factor = soil_coefficients[soil_type]
