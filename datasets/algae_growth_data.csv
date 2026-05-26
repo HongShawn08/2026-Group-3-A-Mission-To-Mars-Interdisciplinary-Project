@@ -1,0 +1,31 @@
+day,soil,enzyme,temperature,co2,light,growth_rate,oxygen_output
+1,Iron-rich,Chromate Reductase,20,0.05,9,2.317,11.796
+2,Sulfate-based,Class II Chromate Reductase,20,0.05,9,2.691,16.285
+3,Clay-based,Urease,20,0.05,9,3.275,14.554
+4,Iron-rich,Chromate Reductase,20,0.05,9,3.17,24.615
+5,Sulfate-based,Class II Chromate Reductase,20,0.05,9,4.815,20.558
+6,Clay-based,Urease,20,0.05,9,3.982,12.111
+7,Iron-rich,Chromate Reductase,20,0.05,9,4.758,14.833
+8,Sulfate-based,Class II Chromate Reductase,20,0.05,9,4.833,21.428
+9,Clay-based,Urease,20,0.05,9,4.394,22.502
+10,Iron-rich,Chromate Reductase,20,0.05,9,2.003,10.952
+11,Sulfate-based,Class II Chromate Reductase,20,0.05,9,4.408,19.839
+12,Clay-based,Urease,20,0.05,9,4.157,24.116
+13,Iron-rich,Chromate Reductase,20,0.05,9,3.905,14.447
+14,Sulfate-based,Class II Chromate Reductase,20,0.05,9,4.092,12.076
+15,Clay-based,Urease,20,0.05,9,2.656,12.506
+16,Iron-rich,Chromate Reductase,20,0.05,9,3.34,12.424
+17,Sulfate-based,Class II Chromate Reductase,20,0.05,9,4.999,12.662
+18,Clay-based,Urease,20,0.05,9,2.487,21.553
+19,Iron-rich,Chromate Reductase,20,0.05,9,2.534,10.482
+20,Sulfate-based,Class II Chromate Reductase,20,0.05,9,3.682,15.741
+21,Clay-based,Urease,20,0.05,9,4.459,19.854
+22,Iron-rich,Chromate Reductase,20,0.05,9,4.231,17.917
+23,Sulfate-based,Class II Chromate Reductase,20,0.05,9,3.105,15.625
+24,Clay-based,Urease,20,0.05,9,3.566,16.83
+25,Iron-rich,Chromate Reductase,20,0.05,9,4.185,20.373
+26,Sulfate-based,Class II Chromate Reductase,20,0.05,9,3.736,18.92
+27,Clay-based,Urease,20,0.05,9,4.535,12.088
+28,Iron-rich,Chromate Reductase,20,0.05,9,3.102,13.841
+29,Sulfate-based,Class II Chromate Reductase,20,0.05,9,2.607,23.379
+30,Clay-based,Urease,20,0.05,9,3.27,19.578

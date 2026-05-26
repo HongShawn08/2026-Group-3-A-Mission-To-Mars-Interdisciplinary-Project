@@ -70,7 +70,7 @@ python algae_simulation.py
 
 ### Dataset Variables
 - **Soil Composition:** Simulated Martian regolith mixes (iron-rich, sulfate-based, etc.)
-- **Enzyme Type:** Growth stimulants tested (Enzyme A, B, C)
+- **Enzyme Type:** Growth stimulants tested (Chromate Reductase, Class II Chromate Reductase, Urease)
 - **Temperature:** 10-30°C (controlled habitat range)
 - **CO₂ Levels:** 0.03-0.08 (Martian atmospheric simulation)
 - **Light Exposure:** 6-12 hours (solar panel-powered grow lights)
